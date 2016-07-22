@@ -15,22 +15,19 @@ function getAPIData(event) {
 // Handle json response
 function displayResponse(response) {
   var pagesObj = response.query.pages;
-  for (var key in pagesObj) {
-    console.log(key);
-    console.log("title: " + pagesObj[key].title);
-    // document.getElementById("response1").innerHTML = pagesObj[key].title;
-    Object.getOwnPropertyNames(pagesObj).forEach(function(val, idx, obj) {
-      console.log(val + " " + pagesObj[val].title);
-      console.log(idx);
-      document.getElementById("response"+ idx).innerHTML = val + " " + pagesObj[val].title;
-    });
-  };
+  console.log(pagesObj);
+  Object.getOwnPropertyNames(pagesObj).forEach(function(val, idx, obj) {
+    console.log(val + " " + pagesObj[val].title);
+    console.log(idx);
+    document.getElementById("response"+ idx).innerHTML = "Page ID: " + val + " Page Title: " + pagesObj[val].title + " Page Extract: " + pagesObj[val].extract;
+  });
 };
+// };
 
 
 function createSearchURL(searchTerms) {
   var searchTermsString = searchTerms.replace(/\s/g, "%20");
-  var baseURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&exsentences=1&explaintext&generator=search&gsrsearch=";
+  var baseURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&exsentences=1&exlimit=10&explaintext&generator=search&gsrsearch=";
   var searchURL;
   var callbackURL = "&callback=displayResponse";
   return searchURL = baseURL + searchTermsString + callbackURL;
