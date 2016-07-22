@@ -1,0 +1,60 @@
+html {
+  background-color: #1f1e73;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 1.4;
+  font-size: x-large;
+  color:  #c394ef;
+}
+
+a {
+  text-decoration: none;
+  color: #f062f7;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 0.9em;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+p {
+  font-size: x-large;
+}
+
+input#inputBox {
+  background-color: #c394ef;
+  color: aliceblue;
+  font-size: large;
+  padding-left: 5px;
+  margin: 0;
+  border: 0;
+  margin-left: 15px;
+}
+
+.response {
+  margin: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: #7876f5;
+  border-width: medium;
+  /* border-style: solid; */
+  text-align: justify;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
